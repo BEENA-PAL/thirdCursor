@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "gilroy";
+        background-color: black;
+        color: white;
+        height: 100vh;
+        width: 100%;
+      }
+
+      #main {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: auto;
+        position: relative;
+      }
+      .cursor {
+        height: 5rem;
+        width: 5rem;
+        background-color: white;
+        border-radius: 50%;
+        mix-blend-mode: difference;
+        position: absolute;
+      }
+      h1 {
+        font-size: 9vw;
+        text-align: center;
+      }
+    </style>
+    <title>myCursor</title>
+  </head>
+  <body>
+    <div id="main">
+      <div class="cursor"></div>
+      <h1>Please Move Your Cursor</h1>
+      <h1>Please Move Your Cursor</h1>
+    </div>
+
+    <script>
+      var main = document.querySelector("#main");
+      var cursor = document.querySelector(".cursor");
+      main.addEventListener("mousemove", function (dets) {
+        cursor.style.top = dets.y + "px";
+        cursor.style.left = dets.x + "px";
+      });
+    </script>
+  </body>
+</html>
